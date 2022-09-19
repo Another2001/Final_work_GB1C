@@ -3,7 +3,7 @@ string[] fullmas = new string[N];
 string masstr = string.Empty;
 Console.WriteLine("Введите строки: ");
 
-int Input(string text)
+int Input(string text) // метод, который проверяет введенные данные и, если это не число, заставляет вводить данные снова (пока данными не окажется число)
 {
     bool f = false;
     int number = 0;
@@ -16,26 +16,26 @@ int Input(string text)
     return number;
 }
 
-string WritString()
+string WritString() // метод для заполнения элементов массива
 {
     string str = Console.ReadLine();
     return str;
 }
 
-for (int i = 0; i < N; i++)
+for (int i = 0; i < N; i++) // цикл для заполнения массива и запоминания элементов в одну строку
 {
     fullmas[i] = WritString();
-    masstr += fullmas[i] + " ";
+    masstr += "\"" + fullmas[i] + "\"  ";
 }
 
-string Formating()
+string Formating() // метод для отсеивания массива строк длина которых больше 3 символов
 {
     string str = string.Empty;
     for (int i = 0; i < N; i++)
     {
         if (fullmas[i].Length <= 3)
         {
-            str += fullmas[i] + " ";
+            str += "\"" + fullmas[i] + "\"      ";
         }
     }
     return str;
